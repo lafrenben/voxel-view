@@ -31,12 +31,7 @@ View.prototype.createRenderer = function(opts) {
   opts.antialias = opts.antialias || true
   this.renderer = new THREE.WebGLRenderer(opts)
   this.renderer.setSize(this.width, this.height)
-  if (!this.renderer.setClearColorHex) {
-    // Should work in earlier versions of three.js that have removed setClearColorHex
-    this.renderer.setClearColor(this.skyColor, 1.0)
-  } else {
-    this.renderer.setClearColorHex(this.skyColor, 1.0)
-  }
+  this.renderer.setClearColor(this.skyColor, 1.0)
   this.renderer.clear()
 }
 
