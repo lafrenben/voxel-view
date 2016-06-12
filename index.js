@@ -9,7 +9,7 @@ module.exports = function(three, opts) {
 
 function View(three, opts) {
   THREE = three // three.js doesn't support multiple instances on a single page
-  this.fov = opts.fov || 60
+  this.fov = opts.fov || 45
   this.width = opts.width || 512
   this.height = opts.height || 512
   this.aspectRatio = opts.aspectRatio || this.width/this.height
