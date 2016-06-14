@@ -43,6 +43,12 @@ View.prototype.getCamera = function() {
   return this.camera
 }
 
+View.prototype.setCamera = function(camera) {
+  this.camera = camera;
+  this.camera.aspect = this.aspectRatio;
+  this.camera.updateProjectionMatrix();
+}
+
 View.prototype.cameraPosition = function() {
   temporaryPosition.multiplyScalar(0)
   temporaryPosition.applyMatrix4(this.camera.matrixWorld)
